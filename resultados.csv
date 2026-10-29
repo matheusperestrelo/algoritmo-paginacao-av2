@@ -1,5 +1,5 @@
 molduras,algoritmo,faltas
-3,FIFO,32
-3,LRU,31
-3,Relógio,32
-3,Ótimo,19
+10,FIFO,8
+10,LRU,8
+10,Relógio,8
+10,Ótimo,8

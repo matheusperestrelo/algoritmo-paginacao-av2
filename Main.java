@@ -28,6 +28,7 @@ public class Main {
         try (FileWriter csv = new FileWriter("resultados.csv")) {
             csv.write("molduras,algoritmo,faltas\n");
         }
+        LogSimulacao.iniciarArquivo();
 
         AlgoritmoSubstituicao[] algoritmos = { new FIFO(), new LRU(), new Relogio(), new Otimo() };
 

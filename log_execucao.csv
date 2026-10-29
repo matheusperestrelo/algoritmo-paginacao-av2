@@ -1,0 +1,161 @@
+timestamp,tempo_us,algoritmo,molduras,passo,pagina,evento,faltas_acumuladas,memoria,detalhe
+2026-10-29 06:05:21.543,699,FIFO,10,0,1,ADICIONADA,1,[1],falta de página: entra no fim da fila
+2026-10-29 06:05:21.544,16479,FIFO,10,1,2,ADICIONADA,2,[1|2],falta de página: entra no fim da fila
+2026-10-29 06:05:21.544,16540,FIFO,10,2,3,ADICIONADA,3,[1|2|3],falta de página: entra no fim da fila
+2026-10-29 06:05:21.544,16600,FIFO,10,3,1,ACERTO,3,[1|2|3],página já estava na memória
+2026-10-29 06:05:21.544,16658,FIFO,10,4,2,ACERTO,3,[1|2|3],página já estava na memória
+2026-10-29 06:05:21.544,16712,FIFO,10,5,4,ADICIONADA,4,[1|2|3|4],falta de página: entra no fim da fila
+2026-10-29 06:05:21.544,16792,FIFO,10,6,1,ACERTO,4,[1|2|3|4],página já estava na memória
+2026-10-29 06:05:21.545,16850,FIFO,10,7,2,ACERTO,4,[1|2|3|4],página já estava na memória
+2026-10-29 06:05:21.545,16902,FIFO,10,8,3,ACERTO,4,[1|2|3|4],página já estava na memória
+2026-10-29 06:05:21.545,16950,FIFO,10,9,5,ADICIONADA,5,[1|2|3|4|5],falta de página: entra no fim da fila
+2026-10-29 06:05:21.545,16998,FIFO,10,10,1,ACERTO,5,[1|2|3|4|5],página já estava na memória
+2026-10-29 06:05:21.545,17063,FIFO,10,11,2,ACERTO,5,[1|2|3|4|5],página já estava na memória
+2026-10-29 06:05:21.545,17108,FIFO,10,12,4,ACERTO,5,[1|2|3|4|5],página já estava na memória
+2026-10-29 06:05:21.545,17147,FIFO,10,13,1,ACERTO,5,[1|2|3|4|5],página já estava na memória
+2026-10-29 06:05:21.545,17189,FIFO,10,14,3,ACERTO,5,[1|2|3|4|5],página já estava na memória
+2026-10-29 06:05:21.545,17228,FIFO,10,15,2,ACERTO,5,[1|2|3|4|5],página já estava na memória
+2026-10-29 06:05:21.545,17268,FIFO,10,16,6,ADICIONADA,6,[1|2|3|4|5|6],falta de página: entra no fim da fila
+2026-10-29 06:05:21.545,17320,FIFO,10,17,1,ACERTO,6,[1|2|3|4|5|6],página já estava na memória
+2026-10-29 06:05:21.545,17366,FIFO,10,18,2,ACERTO,6,[1|2|3|4|5|6],página já estava na memória
+2026-10-29 06:05:21.545,17417,FIFO,10,19,3,ACERTO,6,[1|2|3|4|5|6],página já estava na memória
+2026-10-29 06:05:21.545,17464,FIFO,10,20,7,ADICIONADA,7,[1|2|3|4|5|6|7],falta de página: entra no fim da fila
+2026-10-29 06:05:21.545,17512,FIFO,10,21,1,ACERTO,7,[1|2|3|4|5|6|7],página já estava na memória
+2026-10-29 06:05:21.545,17566,FIFO,10,22,2,ACERTO,7,[1|2|3|4|5|6|7],página já estava na memória
+2026-10-29 06:05:21.545,17613,FIFO,10,23,4,ACERTO,7,[1|2|3|4|5|6|7],página já estava na memória
+2026-10-29 06:05:21.545,17660,FIFO,10,24,3,ACERTO,7,[1|2|3|4|5|6|7],página já estava na memória
+2026-10-29 06:05:21.545,17710,FIFO,10,25,1,ACERTO,7,[1|2|3|4|5|6|7],página já estava na memória
+2026-10-29 06:05:21.545,17756,FIFO,10,26,8,ADICIONADA,8,[1|2|3|4|5|6|7|8],falta de página: entra no fim da fila
+2026-10-29 06:05:21.546,17806,FIFO,10,27,2,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.546,17860,FIFO,10,28,1,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.546,17901,FIFO,10,29,3,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.546,17939,FIFO,10,30,5,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.546,17979,FIFO,10,31,2,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.546,18026,FIFO,10,32,1,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.546,18079,FIFO,10,33,4,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.546,18149,FIFO,10,34,3,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.546,18190,FIFO,10,35,2,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.546,18235,FIFO,10,36,1,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.546,18301,FIFO,10,37,6,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.546,18340,FIFO,10,38,2,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.546,18384,FIFO,10,39,1,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.551,110,LRU,10,0,1,ADICIONADA,1,[1],falta de página
+2026-10-29 06:05:21.551,192,LRU,10,1,2,ADICIONADA,2,[1|2],falta de página
+2026-10-29 06:05:21.551,238,LRU,10,2,3,ADICIONADA,3,[1|2|3],falta de página
+2026-10-29 06:05:21.551,603,LRU,10,3,1,ACERTO,3,[1|2|3],último uso no passo 0
+2026-10-29 06:05:21.551,651,LRU,10,4,2,ACERTO,3,[1|2|3],último uso no passo 1
+2026-10-29 06:05:21.551,685,LRU,10,5,4,ADICIONADA,4,[1|2|3|4],falta de página
+2026-10-29 06:05:21.551,718,LRU,10,6,1,ACERTO,4,[1|2|3|4],último uso no passo 3
+2026-10-29 06:05:21.551,780,LRU,10,7,2,ACERTO,4,[1|2|3|4],último uso no passo 4
+2026-10-29 06:05:21.551,815,LRU,10,8,3,ACERTO,4,[1|2|3|4],último uso no passo 2
+2026-10-29 06:05:21.551,846,LRU,10,9,5,ADICIONADA,5,[1|2|3|4|5],falta de página
+2026-10-29 06:05:21.551,880,LRU,10,10,1,ACERTO,5,[1|2|3|4|5],último uso no passo 6
+2026-10-29 06:05:21.551,910,LRU,10,11,2,ACERTO,5,[1|2|3|4|5],último uso no passo 7
+2026-10-29 06:05:21.552,970,LRU,10,12,4,ACERTO,5,[1|2|3|4|5],último uso no passo 5
+2026-10-29 06:05:21.552,1026,LRU,10,13,1,ACERTO,5,[1|2|3|4|5],último uso no passo 10
+2026-10-29 06:05:21.552,1059,LRU,10,14,3,ACERTO,5,[1|2|3|4|5],último uso no passo 8
+2026-10-29 06:05:21.552,1093,LRU,10,15,2,ACERTO,5,[1|2|3|4|5],último uso no passo 11
+2026-10-29 06:05:21.552,1123,LRU,10,16,6,ADICIONADA,6,[1|2|3|4|5|6],falta de página
+2026-10-29 06:05:21.552,1155,LRU,10,17,1,ACERTO,6,[1|2|3|4|5|6],último uso no passo 13
+2026-10-29 06:05:21.552,1189,LRU,10,18,2,ACERTO,6,[1|2|3|4|5|6],último uso no passo 15
+2026-10-29 06:05:21.552,1225,LRU,10,19,3,ACERTO,6,[1|2|3|4|5|6],último uso no passo 14
+2026-10-29 06:05:21.552,1262,LRU,10,20,7,ADICIONADA,7,[1|2|3|4|5|6|7],falta de página
+2026-10-29 06:05:21.552,1293,LRU,10,21,1,ACERTO,7,[1|2|3|4|5|6|7],último uso no passo 17
+2026-10-29 06:05:21.552,1327,LRU,10,22,2,ACERTO,7,[1|2|3|4|5|6|7],último uso no passo 18
+2026-10-29 06:05:21.552,1361,LRU,10,23,4,ACERTO,7,[1|2|3|4|5|6|7],último uso no passo 12
+2026-10-29 06:05:21.552,1395,LRU,10,24,3,ACERTO,7,[1|2|3|4|5|6|7],último uso no passo 19
+2026-10-29 06:05:21.552,1433,LRU,10,25,1,ACERTO,7,[1|2|3|4|5|6|7],último uso no passo 21
+2026-10-29 06:05:21.552,1465,LRU,10,26,8,ADICIONADA,8,[1|2|3|4|5|6|7|8],falta de página
+2026-10-29 06:05:21.552,1495,LRU,10,27,2,ACERTO,8,[1|2|3|4|5|6|7|8],último uso no passo 22
+2026-10-29 06:05:21.552,1527,LRU,10,28,1,ACERTO,8,[1|2|3|4|5|6|7|8],último uso no passo 25
+2026-10-29 06:05:21.552,1556,LRU,10,29,3,ACERTO,8,[1|2|3|4|5|6|7|8],último uso no passo 24
+2026-10-29 06:05:21.552,1588,LRU,10,30,5,ACERTO,8,[1|2|3|4|5|6|7|8],último uso no passo 9
+2026-10-29 06:05:21.552,1625,LRU,10,31,2,ACERTO,8,[1|2|3|4|5|6|7|8],último uso no passo 27
+2026-10-29 06:05:21.552,1656,LRU,10,32,1,ACERTO,8,[1|2|3|4|5|6|7|8],último uso no passo 28
+2026-10-29 06:05:21.552,1692,LRU,10,33,4,ACERTO,8,[1|2|3|4|5|6|7|8],último uso no passo 23
+2026-10-29 06:05:21.552,1723,LRU,10,34,3,ACERTO,8,[1|2|3|4|5|6|7|8],último uso no passo 29
+2026-10-29 06:05:21.552,1754,LRU,10,35,2,ACERTO,8,[1|2|3|4|5|6|7|8],último uso no passo 31
+2026-10-29 06:05:21.552,1791,LRU,10,36,1,ACERTO,8,[1|2|3|4|5|6|7|8],último uso no passo 32
+2026-10-29 06:05:21.552,1821,LRU,10,37,6,ACERTO,8,[1|2|3|4|5|6|7|8],último uso no passo 16
+2026-10-29 06:05:21.552,1852,LRU,10,38,2,ACERTO,8,[1|2|3|4|5|6|7|8],último uso no passo 35
+2026-10-29 06:05:21.552,1883,LRU,10,39,1,ACERTO,8,[1|2|3|4|5|6|7|8],último uso no passo 36
+2026-10-29 06:05:21.553,522,Relógio,10,0,1,ADICIONADA,1,[1|-|-|-|-|-|-|-|-|-],falta de página: entra na moldura 0
+2026-10-29 06:05:21.553,573,Relógio,10,1,2,ADICIONADA,2,[1|2|-|-|-|-|-|-|-|-],falta de página: entra na moldura 1
+2026-10-29 06:05:21.553,612,Relógio,10,2,3,ADICIONADA,3,[1|2|3|-|-|-|-|-|-|-],falta de página: entra na moldura 2
+2026-10-29 06:05:21.553,697,Relógio,10,3,1,ACERTO,3,[1|2|3|-|-|-|-|-|-|-],moldura 0: bit de referência = 1
+2026-10-29 06:05:21.553,739,Relógio,10,4,2,ACERTO,3,[1|2|3|-|-|-|-|-|-|-],moldura 1: bit de referência = 1
+2026-10-29 06:05:21.553,785,Relógio,10,5,4,ADICIONADA,4,[1|2|3|4|-|-|-|-|-|-],falta de página: entra na moldura 3
+2026-10-29 06:05:21.553,824,Relógio,10,6,1,ACERTO,4,[1|2|3|4|-|-|-|-|-|-],moldura 0: bit de referência = 1
+2026-10-29 06:05:21.554,880,Relógio,10,7,2,ACERTO,4,[1|2|3|4|-|-|-|-|-|-],moldura 1: bit de referência = 1
+2026-10-29 06:05:21.554,922,Relógio,10,8,3,ACERTO,4,[1|2|3|4|-|-|-|-|-|-],moldura 2: bit de referência = 1
+2026-10-29 06:05:21.554,960,Relógio,10,9,5,ADICIONADA,5,[1|2|3|4|5|-|-|-|-|-],falta de página: entra na moldura 4
+2026-10-29 06:05:21.554,1007,Relógio,10,10,1,ACERTO,5,[1|2|3|4|5|-|-|-|-|-],moldura 0: bit de referência = 1
+2026-10-29 06:05:21.554,1044,Relógio,10,11,2,ACERTO,5,[1|2|3|4|5|-|-|-|-|-],moldura 1: bit de referência = 1
+2026-10-29 06:05:21.554,1076,Relógio,10,12,4,ACERTO,5,[1|2|3|4|5|-|-|-|-|-],moldura 3: bit de referência = 1
+2026-10-29 06:05:21.554,1104,Relógio,10,13,1,ACERTO,5,[1|2|3|4|5|-|-|-|-|-],moldura 0: bit de referência = 1
+2026-10-29 06:05:21.554,1140,Relógio,10,14,3,ACERTO,5,[1|2|3|4|5|-|-|-|-|-],moldura 2: bit de referência = 1
+2026-10-29 06:05:21.554,1175,Relógio,10,15,2,ACERTO,5,[1|2|3|4|5|-|-|-|-|-],moldura 1: bit de referência = 1
+2026-10-29 06:05:21.554,1210,Relógio,10,16,6,ADICIONADA,6,[1|2|3|4|5|6|-|-|-|-],falta de página: entra na moldura 5
+2026-10-29 06:05:21.554,1241,Relógio,10,17,1,ACERTO,6,[1|2|3|4|5|6|-|-|-|-],moldura 0: bit de referência = 1
+2026-10-29 06:05:21.554,1275,Relógio,10,18,2,ACERTO,6,[1|2|3|4|5|6|-|-|-|-],moldura 1: bit de referência = 1
+2026-10-29 06:05:21.554,1315,Relógio,10,19,3,ACERTO,6,[1|2|3|4|5|6|-|-|-|-],moldura 2: bit de referência = 1
+2026-10-29 06:05:21.554,1346,Relógio,10,20,7,ADICIONADA,7,[1|2|3|4|5|6|7|-|-|-],falta de página: entra na moldura 6
+2026-10-29 06:05:21.554,1375,Relógio,10,21,1,ACERTO,7,[1|2|3|4|5|6|7|-|-|-],moldura 0: bit de referência = 1
+2026-10-29 06:05:21.554,1402,Relógio,10,22,2,ACERTO,7,[1|2|3|4|5|6|7|-|-|-],moldura 1: bit de referência = 1
+2026-10-29 06:05:21.554,1435,Relógio,10,23,4,ACERTO,7,[1|2|3|4|5|6|7|-|-|-],moldura 3: bit de referência = 1
+2026-10-29 06:05:21.554,1468,Relógio,10,24,3,ACERTO,7,[1|2|3|4|5|6|7|-|-|-],moldura 2: bit de referência = 1
+2026-10-29 06:05:21.554,1494,Relógio,10,25,1,ACERTO,7,[1|2|3|4|5|6|7|-|-|-],moldura 0: bit de referência = 1
+2026-10-29 06:05:21.554,1522,Relógio,10,26,8,ADICIONADA,8,[1|2|3|4|5|6|7|8|-|-],falta de página: entra na moldura 7
+2026-10-29 06:05:21.554,1551,Relógio,10,27,2,ACERTO,8,[1|2|3|4|5|6|7|8|-|-],moldura 1: bit de referência = 1
+2026-10-29 06:05:21.554,1583,Relógio,10,28,1,ACERTO,8,[1|2|3|4|5|6|7|8|-|-],moldura 0: bit de referência = 1
+2026-10-29 06:05:21.554,1613,Relógio,10,29,3,ACERTO,8,[1|2|3|4|5|6|7|8|-|-],moldura 2: bit de referência = 1
+2026-10-29 06:05:21.554,1640,Relógio,10,30,5,ACERTO,8,[1|2|3|4|5|6|7|8|-|-],moldura 4: bit de referência = 1
+2026-10-29 06:05:21.554,1665,Relógio,10,31,2,ACERTO,8,[1|2|3|4|5|6|7|8|-|-],moldura 1: bit de referência = 1
+2026-10-29 06:05:21.554,1699,Relógio,10,32,1,ACERTO,8,[1|2|3|4|5|6|7|8|-|-],moldura 0: bit de referência = 1
+2026-10-29 06:05:21.554,1728,Relógio,10,33,4,ACERTO,8,[1|2|3|4|5|6|7|8|-|-],moldura 3: bit de referência = 1
+2026-10-29 06:05:21.554,1754,Relógio,10,34,3,ACERTO,8,[1|2|3|4|5|6|7|8|-|-],moldura 2: bit de referência = 1
+2026-10-29 06:05:21.554,1780,Relógio,10,35,2,ACERTO,8,[1|2|3|4|5|6|7|8|-|-],moldura 1: bit de referência = 1
+2026-10-29 06:05:21.554,1806,Relógio,10,36,1,ACERTO,8,[1|2|3|4|5|6|7|8|-|-],moldura 0: bit de referência = 1
+2026-10-29 06:05:21.554,1836,Relógio,10,37,6,ACERTO,8,[1|2|3|4|5|6|7|8|-|-],moldura 5: bit de referência = 1
+2026-10-29 06:05:21.555,1867,Relógio,10,38,2,ACERTO,8,[1|2|3|4|5|6|7|8|-|-],moldura 1: bit de referência = 1
+2026-10-29 06:05:21.555,1904,Relógio,10,39,1,ACERTO,8,[1|2|3|4|5|6|7|8|-|-],moldura 0: bit de referência = 1
+2026-10-29 06:05:21.555,39,Ótimo,10,0,1,ADICIONADA,1,[1],falta de página
+2026-10-29 06:05:21.555,67,Ótimo,10,1,2,ADICIONADA,2,[1|2],falta de página
+2026-10-29 06:05:21.555,91,Ótimo,10,2,3,ADICIONADA,3,[1|2|3],falta de página
+2026-10-29 06:05:21.555,117,Ótimo,10,3,1,ACERTO,3,[1|2|3],página já estava na memória
+2026-10-29 06:05:21.555,143,Ótimo,10,4,2,ACERTO,3,[1|2|3],página já estava na memória
+2026-10-29 06:05:21.555,165,Ótimo,10,5,4,ADICIONADA,4,[1|2|3|4],falta de página
+2026-10-29 06:05:21.555,187,Ótimo,10,6,1,ACERTO,4,[1|2|3|4],página já estava na memória
+2026-10-29 06:05:21.555,227,Ótimo,10,7,2,ACERTO,4,[1|2|3|4],página já estava na memória
+2026-10-29 06:05:21.555,271,Ótimo,10,8,3,ACERTO,4,[1|2|3|4],página já estava na memória
+2026-10-29 06:05:21.555,295,Ótimo,10,9,5,ADICIONADA,5,[1|2|3|4|5],falta de página
+2026-10-29 06:05:21.555,314,Ótimo,10,10,1,ACERTO,5,[1|2|3|4|5],página já estava na memória
+2026-10-29 06:05:21.555,332,Ótimo,10,11,2,ACERTO,5,[1|2|3|4|5],página já estava na memória
+2026-10-29 06:05:21.555,358,Ótimo,10,12,4,ACERTO,5,[1|2|3|4|5],página já estava na memória
+2026-10-29 06:05:21.555,386,Ótimo,10,13,1,ACERTO,5,[1|2|3|4|5],página já estava na memória
+2026-10-29 06:05:21.555,406,Ótimo,10,14,3,ACERTO,5,[1|2|3|4|5],página já estava na memória
+2026-10-29 06:05:21.555,426,Ótimo,10,15,2,ACERTO,5,[1|2|3|4|5],página já estava na memória
+2026-10-29 06:05:21.555,446,Ótimo,10,16,6,ADICIONADA,6,[1|2|3|4|5|6],falta de página
+2026-10-29 06:05:21.555,466,Ótimo,10,17,1,ACERTO,6,[1|2|3|4|5|6],página já estava na memória
+2026-10-29 06:05:21.555,492,Ótimo,10,18,2,ACERTO,6,[1|2|3|4|5|6],página já estava na memória
+2026-10-29 06:05:21.555,512,Ótimo,10,19,3,ACERTO,6,[1|2|3|4|5|6],página já estava na memória
+2026-10-29 06:05:21.555,530,Ótimo,10,20,7,ADICIONADA,7,[1|2|3|4|5|6|7],falta de página
+2026-10-29 06:05:21.555,548,Ótimo,10,21,1,ACERTO,7,[1|2|3|4|5|6|7],página já estava na memória
+2026-10-29 06:05:21.555,569,Ótimo,10,22,2,ACERTO,7,[1|2|3|4|5|6|7],página já estava na memória
+2026-10-29 06:05:21.555,592,Ótimo,10,23,4,ACERTO,7,[1|2|3|4|5|6|7],página já estava na memória
+2026-10-29 06:05:21.555,612,Ótimo,10,24,3,ACERTO,7,[1|2|3|4|5|6|7],página já estava na memória
+2026-10-29 06:05:21.555,633,Ótimo,10,25,1,ACERTO,7,[1|2|3|4|5|6|7],página já estava na memória
+2026-10-29 06:05:21.555,673,Ótimo,10,26,8,ADICIONADA,8,[1|2|3|4|5|6|7|8],falta de página
+2026-10-29 06:05:21.555,737,Ótimo,10,27,2,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.555,779,Ótimo,10,28,1,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.556,802,Ótimo,10,29,3,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.556,823,Ótimo,10,30,5,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.556,846,Ótimo,10,31,2,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.556,865,Ótimo,10,32,1,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.556,891,Ótimo,10,33,4,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.556,916,Ótimo,10,34,3,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.556,936,Ótimo,10,35,2,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.556,955,Ótimo,10,36,1,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.556,974,Ótimo,10,37,6,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.556,1000,Ótimo,10,38,2,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória
+2026-10-29 06:05:21.556,1021,Ótimo,10,39,1,ACERTO,8,[1|2|3|4|5|6|7|8],página já estava na memória

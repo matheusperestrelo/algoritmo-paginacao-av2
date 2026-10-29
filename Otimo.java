@@ -5,13 +5,16 @@ public class Otimo implements AlgoritmoSubstituicao {
 
     public String getNome() { return "Ótimo"; }
 
-    public int simular(int[] referencias, int numMolduras) {
+    public int simular(int[] referencias, int numMolduras, LogSimulacao log) {
         List<Integer> molduras = new ArrayList<>();
         int faltas = 0;
 
         for (int i = 0; i < referencias.length; i++) {
             int pagina = referencias[i];
-            if (molduras.contains(pagina)) continue;    // acerto
+            if (molduras.contains(pagina)) {            // acerto
+                log.acerto(i, pagina, molduras, "página já estava na memória");
+                continue;
+            }
 
             faltas++;
             if (molduras.size() == numMolduras) {       // sai a de uso mais distante
@@ -25,8 +28,13 @@ public class Otimo implements AlgoritmoSubstituicao {
                     }
                 }
                 molduras.remove(Integer.valueOf(vitima));
+                String motivo = maisDistante == Integer.MAX_VALUE
+                    ? "não será mais usada"
+                    : "próximo uso mais distante (passo " + maisDistante + ")";
+                log.retirada(i, vitima, molduras, motivo);
             }
             molduras.add(pagina);
+            log.adicionada(i, pagina, molduras, "falta de página");
         }
         return faltas;
     }
