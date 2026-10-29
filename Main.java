@@ -1,40 +1,159 @@
 import java.io.FileWriter;
 import java.io.IOException;
-
-
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        int[] referencias = {7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2, 1, 2, 0, 1, 7, 0, 1};
-        // 1. Uso geral misto (30 referências)
-        int[] misto = {1,2,3,4,2,1,5,6,2,1,2,3,7,6,3,2,1,2,3,6,4,5,6,7,1,2,4,5,3,2};
+        int molduras = 5;
+        int quantidadeReferencias = 5000;
+        String cenarioEscolhido = "localidade";
 
-        // 2. Localidade forte: páginas 1 e 2 muito usadas (40 referências)
-        int[] localidade = {1,2,3,1,2,4,1,2,3,5,1,2,4,1,3,2,6,1,2,3,7,1,2,4,3,1,8,2,1,3,
-                            5,2,1,4,3,2,1,6,2,1};
+        int[] referencias = {
+            7, 0, 1, 2, 0, 3, 0, 4, 2, 3,
+            0, 3, 2, 1, 2, 0, 1, 7, 0, 1
+        };
 
-        // 3. Laço cíclico: 5 páginas repetidas em ordem (30 referências)
-        int[] ciclico = {1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5};
+        int[] misto = {
+            1, 2, 3, 4, 2, 1, 5, 6, 2, 1,
+            2, 3, 7, 6, 3, 2, 1, 2, 3, 6,
+            4, 5, 6, 7, 1, 2, 4, 5, 3, 2
+        };
 
-        // 4. Fases: o programa muda de grupo de páginas (40 referências)
-        int[] fases = {1,2,3,1,2,3,1,2,3,4,5,6,4,5,6,4,5,6,7,8,9,7,8,9,7,8,9,1,2,3,
-                    1,2,3,4,5,6,4,5,6,1};
+        int[] localidade = gerarReferenciasLocalidade(
+            quantidadeReferencias,
+            50,       
+            8,        
+            12345L 
+        );
 
-        // 5. Anomalia de Belady (12 referências)
-        int[] belady = {1,2,3,4,1,2,5,1,2,3,4,5};
-        int molduras = 10;
+        int[] ciclico = {
+            1, 2, 3, 4, 5, 1, 2, 3, 4, 5,
+            1, 2, 3, 4, 5, 1, 2, 3, 4, 5,
+            1, 2, 3, 4, 5, 1, 2, 3, 4, 5
+        };
 
-        // Cria o arquivo do zero, só com o cabeçalho
+        int[] fases = {
+            1, 2, 3, 1, 2, 3, 1, 2, 3,
+            4, 5, 6, 4, 5, 6, 4, 5, 6,
+            7, 8, 9, 7, 8, 9, 7, 8, 9,
+            1, 2, 3, 1, 2, 3, 4, 5, 6,
+            4, 5, 6, 1
+        };
+
+        int[] belady = {
+            1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5
+        };
+
+        int[] sequencia;
+
+        switch (cenarioEscolhido.toLowerCase()) {
+            case "misto":
+                sequencia = misto;
+                break;
+
+            case "localidade":
+                sequencia = localidade;
+                break;
+
+            case "ciclico":
+                sequencia = ciclico;
+                break;
+
+            case "fases":
+                sequencia = fases;
+                break;
+
+            case "belady":
+                sequencia = belady;
+                break;
+
+            default:
+                throw new IllegalArgumentException(
+                    "Cenário desconhecido: " + cenarioEscolhido
+                );
+        }
+
         try (FileWriter csv = new FileWriter("resultados.csv")) {
             csv.write("molduras,algoritmo,faltas\n");
         }
+
         LogSimulacao.iniciarArquivo();
 
-        AlgoritmoSubstituicao[] algoritmos = { new FIFO(), new LRU(), new Relogio(), new Otimo() };
+        AlgoritmoSubstituicao[] algoritmos = {
+            new FIFO(),
+            new LRU(),
+            new Relogio(),
+            new Otimo()
+        };
 
-        for (int i = 0; i < algoritmos.length; i++) {
-            int faltas = algoritmos[i].simularESalvar(localidade, molduras);
-            System.out.println("Método " + (i + 1) + " - " + faltas + " faltas de página");
+        System.out.println("====================================");
+        System.out.println(" SIMULADOR DE PAGINACAO");
+        System.out.println("====================================");
+        System.out.println("Cenário: " + cenarioEscolhido);
+        System.out.println("Referências: " + sequencia.length);
+        System.out.println("Molduras: " + molduras);
+        System.out.println("------------------------------------");
+
+        for (AlgoritmoSubstituicao algoritmo : algoritmos) {
+
+            int faltas = algoritmo.simularESalvar(
+                sequencia,
+                molduras
+            );
+
+            System.out.println(
+                algoritmo.getClass().getSimpleName()
+                + ": "
+                + faltas
+                + " faltas de página"
+            );
         }
+
+        System.out.println("------------------------------------");
+        System.out.println("Simulação concluída!");
+        System.out.println("Arquivos gerados:");
+        System.out.println("- resultados.csv");
+        System.out.println("- log_execucao.csv");
+    }
+
+    private static int[] gerarReferenciasLocalidade(
+            int quantidade,
+            int totalPaginas,
+            int tamanhoGrupo,
+            long semente) {
+
+        if (quantidade <= 0 || totalPaginas <= 0
+                || tamanhoGrupo <= 0
+                || tamanhoGrupo > totalPaginas) {
+            throw new IllegalArgumentException(
+                "Parâmetros inválidos para gerar referências."
+            );
+        }
+
+        Random random = new Random(semente);
+        int[] referencias = new int[quantidade];
+
+        int inicioGrupo = 0;
+
+        for (int i = 0; i < quantidade; i++) {
+            // A cada 100 referências, escolhe outro grupo.
+            if (i % 100 == 0) {
+                int maxInicio = totalPaginas - tamanhoGrupo + 1;
+                inicioGrupo = random.nextInt(maxInicio);
+            }
+
+            // 85% dos acessos ficam no grupo local.
+            if (random.nextDouble() < 0.85) {
+
+                referencias[i] = inicioGrupo
+                    + random.nextInt(tamanhoGrupo);
+
+            } else {
+                // 15% dos acessos podem atingir qualquer página.
+                referencias[i] = random.nextInt(totalPaginas);
+            }
+        }
+
+        return referencias;
     }
 }
