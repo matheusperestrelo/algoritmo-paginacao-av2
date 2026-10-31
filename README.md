@@ -2,6 +2,11 @@
 
 Simulador em Java dos algoritmos FIFO, LRU, Relógio e Ótimo.
 
+## Equipe
+
+- Matheus Perestrelo
+- Davi Tavares
+
 ## Requisitos
 
 - Java (JDK) 17 ou superior
