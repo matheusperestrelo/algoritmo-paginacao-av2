@@ -1,76 +1,50 @@
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Random;
+import java.util.Scanner;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartUtils;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        int molduras = 5;
-        int quantidadeReferencias = 5000;
-        String cenarioEscolhido = "localidade";
+        Scanner teclado = new Scanner(System.in);
 
-        int[] referencias = {
-            7, 0, 1, 2, 0, 3, 0, 4, 2, 3,
-            0, 3, 2, 1, 2, 0, 1, 7, 0, 1
-        };
+        // 1. Sequência de páginas
+        System.out.println("Digite a sequência de páginas separadas por espaço");
+        System.out.println("(Enter vazio usa o exemplo: 7 0 1 2 0 3 0 4 2 3 0 3 2 1 2 0 1 7 0 1)");
+        System.out.print("> ");
+        String linha = teclado.nextLine().trim();
+        if (linha.isEmpty()) {
+            linha = "7 0 1 2 0 3 0 4 2 3 0 3 2 1 2 0 1 7 0 1";
+        }
 
-        int[] misto = {
-            1, 2, 3, 4, 2, 1, 5, 6, 2, 1,
-            2, 3, 7, 6, 3, 2, 1, 2, 3, 6,
-            4, 5, 6, 7, 1, 2, 4, 5, 3, 2
-        };
+        String[] partes = linha.split("\\s+");
+        int[] sequencia = new int[partes.length];
+        for (int i = 0; i < partes.length; i++) {
+            try {
+                sequencia[i] = Integer.parseInt(partes[i]);
+            } catch (NumberFormatException e) {
+                System.out.println("Valor inválido na sequência: " + partes[i]);
+                return;
+            }
+        }
 
-        int[] localidade = gerarReferenciasLocalidade(
-            quantidadeReferencias,
-            50,       
-            8,        
-            12345L 
-        );
-
-        int[] ciclico = {
-            1, 2, 3, 4, 5, 1, 2, 3, 4, 5,
-            1, 2, 3, 4, 5, 1, 2, 3, 4, 5,
-            1, 2, 3, 4, 5, 1, 2, 3, 4, 5
-        };
-
-        int[] fases = {
-            1, 2, 3, 1, 2, 3, 1, 2, 3,
-            4, 5, 6, 4, 5, 6, 4, 5, 6,
-            7, 8, 9, 7, 8, 9, 7, 8, 9,
-            1, 2, 3, 1, 2, 3, 4, 5, 6,
-            4, 5, 6, 1
-        };
-
-        int[] belady = {
-            1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5
-        };
-
-        int[] sequencia;
-
-        switch (cenarioEscolhido.toLowerCase()) {
-            case "misto":
-                sequencia = misto;
-                break;
-
-            case "localidade":
-                sequencia = localidade;
-                break;
-
-            case "ciclico":
-                sequencia = ciclico;
-                break;
-
-            case "fases":
-                sequencia = fases;
-                break;
-
-            case "belady":
-                sequencia = belady;
-                break;
-
-            default:
-                throw new IllegalArgumentException(
-                    "Cenário desconhecido: " + cenarioEscolhido
-                );
+        // 2. Número de molduras
+        System.out.print("Quantas molduras? ");
+        int molduras;
+        try {
+            molduras = Integer.parseInt(teclado.nextLine().trim());
+        } catch (NumberFormatException e) {
+            System.out.println("Número de molduras inválido.");
+            return;
+        }
+        if (molduras <= 0) {
+            System.out.println("O número de molduras deve ser maior que zero.");
+            return;
         }
 
         try (FileWriter csv = new FileWriter("resultados.csv")) {
@@ -89,71 +63,34 @@ public class Main {
         System.out.println("====================================");
         System.out.println(" SIMULADOR DE PAGINACAO");
         System.out.println("====================================");
-        System.out.println("Cenário: " + cenarioEscolhido);
         System.out.println("Referências: " + sequencia.length);
         System.out.println("Molduras: " + molduras);
         System.out.println("------------------------------------");
 
+        DefaultCategoryDataset dados = new DefaultCategoryDataset();
+
         for (AlgoritmoSubstituicao algoritmo : algoritmos) {
+            int faltas = algoritmo.simularESalvar(sequencia, molduras);
 
-            int faltas = algoritmo.simularESalvar(
-                sequencia,
-                molduras
-            );
-
-            System.out.println(
-                algoritmo.getClass().getSimpleName()
-                + ": "
-                + faltas
-                + " faltas de página"
-            );
+            System.out.println(algoritmo.getNome() + ": " + faltas + " faltas de página");
+            dados.addValue(faltas, "Faltas", algoritmo.getNome());
         }
+
+        // 3. Gráfico de colunas salvo como imagem
+        JFreeChart grafico = ChartFactory.createBarChart(
+            "Faltas de Página por Algoritmo",
+            "Algoritmo",
+            "Quantidade de faltas",
+            dados,
+            PlotOrientation.VERTICAL,
+            false, true, false);
+        ChartUtils.saveChartAsPNG(new File("grafico_faltas.png"), grafico, 700, 450);
 
         System.out.println("------------------------------------");
         System.out.println("Simulação concluída!");
         System.out.println("Arquivos gerados:");
         System.out.println("- resultados.csv");
         System.out.println("- log_execucao.csv");
-    }
-
-    private static int[] gerarReferenciasLocalidade(
-            int quantidade,
-            int totalPaginas,
-            int tamanhoGrupo,
-            long semente) {
-
-        if (quantidade <= 0 || totalPaginas <= 0
-                || tamanhoGrupo <= 0
-                || tamanhoGrupo > totalPaginas) {
-            throw new IllegalArgumentException(
-                "Parâmetros inválidos para gerar referências."
-            );
-        }
-
-        Random random = new Random(semente);
-        int[] referencias = new int[quantidade];
-
-        int inicioGrupo = 0;
-
-        for (int i = 0; i < quantidade; i++) {
-            // A cada 100 referências, escolhe outro grupo.
-            if (i % 100 == 0) {
-                int maxInicio = totalPaginas - tamanhoGrupo + 1;
-                inicioGrupo = random.nextInt(maxInicio);
-            }
-
-            // 85% dos acessos ficam no grupo local.
-            if (random.nextDouble() < 0.85) {
-
-                referencias[i] = inicioGrupo
-                    + random.nextInt(tamanhoGrupo);
-
-            } else {
-                // 15% dos acessos podem atingir qualquer página.
-                referencias[i] = random.nextInt(totalPaginas);
-            }
-        }
-
-        return referencias;
+        System.out.println("- grafico_faltas.png");
     }
 }
